@@ -1,4 +1,4 @@
-function EditarSeries(id, series) {
+/*function EditarSeries(id, series) {
 
   //alert(`ola estou aqui ${}` );
   const ids = id;
@@ -8,3 +8,4 @@ function EditarSeries(id, series) {
 
   window.location.href = "../Editar/editar.html"
 }
+*/

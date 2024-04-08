@@ -7,7 +7,7 @@
     <meta name="author" content="Junior Oliveira">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script defer src="/scripts/spript.js"></script>
+    <script src="/scripts/script.js"></script>
     <script src="/scripts/delete.js"></script>
     <script src="/scripts/update.js"></script>
 
@@ -62,34 +62,29 @@
                 <form action="" class="main-flex__form-element" id="formValidation">
                     <div class="main-flex__inputs">
                         <label for="">Informe o seu nome:</label>
-                        <input type="text" id="nomeSerie" placeholder="Ex: House os the dragon" id="nomeSerie" required>
+                        <input type="text" id="nomeUsuario" placeholder="Ex: Ronaldinho" required>
                     </div>
 
                     <div class="main-flex__inputs">
-                        <label for="">Informe o seu sobrenome</label>
-                        <input type="number" id="numTemporada" placeholder="Ex: 8" id="numTemporada" required min="1"
-                            max="20">
-                    </div>
-
-                    <div class="main-flex__inputs">
-                        <label for="">Informe a data de nascimento</label>
-                        <input type="date"  id="dateNasc">
+                        <label for="">Idade</label>
+                        <input type="number" id="idadeUsuario" placeholder="Ex: 18"  required min="1"
+                            max="99">
                     </div>
 
                     <div class="main-flex__inputs">
                         <label for="">Informe o seu endereço</label>
-                        <input type="number" id="numTemporada" placeholder="Ex: 8" id="numTemporada" required min="1"
-                            max="20">
-                    </div>
-                    <div class="main-flex__inputs">
-                        <label for="">Informe o número</label>
-                        <input type="number" id="anoLancamento" placeholder="Ex: 2012" id="anoLancamento" required
-                            max="2024">
+                        <input type="text" id="enderecoUsuario" placeholder="Ex: Rua Moreira de Godói, 226, ipiranga-SP" required>
                     </div>
 
                     <div class="main-flex__inputs">
                         <label for="">Informe o seu E-mail</label>
-                        <input type="email" name="" id="email-">
+                        <input type="text" id="emialUsuario" placeholder="Ex: teste@teste.com"  required>
+                    </div>
+
+                    <div class="main-flex__inputs">
+                        <label for="">Informe o numero de telefone</label>
+                        <input type="number" id="telefoneUsuario" placeholder="Ex: 11985611234" required min="1"
+                            max="12">
                     </div>
 
                     <div class="main-flex__button">
@@ -113,14 +108,15 @@
                         <thead>
                             <tr>
                                 <th>Nome</th>
-                                <th>sobrenome</th>
-                                <th>data de nascimento</th>
-                                <th>endereço</th>
+                                <th>Idade</th>
+                                <th>Endereço</th>
                                 <th>E-mail</th>
+                                <th>Telefone</th>
+                                <th>Ação</th>
                             </tr>
                         </thead>
 
-                        <tbody id="listaSeries">
+                        <tbody id="listaUsuarios">
                             <!--quem vai criar os dados vai ser o javaScript
                                 <td><i class="bi bi-pencil-square"></i></td>
                                 <td><i class="bi bi-trash3"></i></td>-->
