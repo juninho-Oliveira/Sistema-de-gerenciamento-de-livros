@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Junior Oliveira">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script defer src="/scripts/spript.js"></script>
     <script src="/scripts/delete.js"></script>
@@ -19,54 +19,82 @@
         <nav class="container-grid nav-flex__elements">
 
             <div class="nav-flex__log-senai">
-                <img src="/assets/images/logo-senai.png" alt="logo do senai">
+                <img src="./assets/images/logo-senai.png" alt="logo do senai">
             </div>
 
             <div class="nav-flex__links">
                 <ul class="nav-flex__links-list">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#main">Conteudo</a></li>
-                    <li><a href="#footer">Contato</a></li>
+                    <li><a href="#main">Cadastro</a></li>
+                    <li><a href="#footer">Biblioteca</a></li>
+                    <li><a href="#footer">Reservas</a></li>
                 </ul>
             </div>
+
+            <div class="container-menu">
+                <button onclick="mostrarMenu()">
+                    <i class="bi bi-card-list" id="icone"></i>
+                </button>
+            </div>
+
         </nav>
 
-        
+        <!-- <div class="nav-flex__links-mobile" id="menuLinks">
+            <ul class="nav-flex__links-list-mobile" id="mostraIcons">
+                <li><a href="#">Home</a></li>
+                <li><a href="#main">Conteudo</a></li>
+                <li><a href="#footer">Contato</a></li>
+            </ul>
+        </div> -->
+
+
     </header>
 
     <main id="main">
-        <h2 >Seja bem vindo ao sistema de cadastro de series</h2>
+        <h2>Seja bem-vindo ao sistema de cadastro de alunos</h2>
 
         <section class="container-grid section-flex">
             <article class="main-flex">
                 <div class="main-flex__form">
-                    <h2 id="title-form">Cadastro de series</h2>
+                    <h2 id="title-form">Cadastro de alunos</h2>
                 </div>
 
                 <form action="" class="main-flex__form-element" id="formValidation">
                     <div class="main-flex__inputs">
-                        <label for="">Informe o nome da serie</label>
+                        <label for="">Informe o seu nome:</label>
                         <input type="text" id="nomeSerie" placeholder="Ex: House os the dragon" id="nomeSerie" required>
                     </div>
 
                     <div class="main-flex__inputs">
-                        <label for="">Informe a quantidade de temporadas</label>
-                        <input type="number" id="numTemporada" placeholder="Ex: 8" id="numTemporada" required min="1" max="20">
+                        <label for="">Informe o seu sobrenome</label>
+                        <input type="number" id="numTemporada" placeholder="Ex: 8" id="numTemporada" required min="1"
+                            max="20">
                     </div>
 
                     <div class="main-flex__inputs">
-                        <label for="">Informe o nome do estudio</label>
-                        <input type="text" id="nomeEstudio" placeholder="Ex: HBO Max" id="nomeEstudio" required>
+                        <label for="">Informe a data de nascimento</label>
+                        <input type="date"  id="dateNasc">
                     </div>
 
                     <div class="main-flex__inputs">
-                        <label for="">Informe o ano de lançamento</label>
-                        <input type="number" id="anoLancamento" placeholder="Ex: 2012" id="anoLancamento" required max="2024">
+                        <label for="">Informe o seu endereço</label>
+                        <input type="number" id="numTemporada" placeholder="Ex: 8" id="numTemporada" required min="1"
+                            max="20">
+                    </div>
+                    <div class="main-flex__inputs">
+                        <label for="">Informe o número</label>
+                        <input type="number" id="anoLancamento" placeholder="Ex: 2012" id="anoLancamento" required
+                            max="2024">
+                    </div>
+
+                    <div class="main-flex__inputs">
+                        <label for="">Informe o seu E-mail</label>
+                        <input type="email" name="" id="email-">
                     </div>
 
                     <div class="main-flex__button">
                         <button type="submit" id="btncadastrar" onclick="adicionar(event)">
-                            Cadastrar Serie
+                            Cadastrar Aluno
                         </button>
                         <button type="reset">
                             Cancelar
@@ -81,18 +109,19 @@
 
                     <h2>Lista de series</h2>
 
-                    <table class="main-flex__listagem-flex__table" cellspacing="12">
+                    <table class="main-flex_listagem-flex_table" cellspacing="12">
                         <thead>
                             <tr>
-                                <th>Nome da serie</th>
-                                <th>Numero de temporadas</th>
-                                <th>Ano de lançamentos</th>
-                                <th>Ações</th>
+                                <th>Nome</th>
+                                <th>sobrenome</th>
+                                <th>data de nascimento</th>
+                                <th>endereço</th>
+                                <th>E-mail</th>
                             </tr>
                         </thead>
 
                         <tbody id="listaSeries">
-                                <!--quem vai criar os dados vai ser o javaScript
+                            <!--quem vai criar os dados vai ser o javaScript
                                 <td><i class="bi bi-pencil-square"></i></td>
                                 <td><i class="bi bi-trash3"></i></td>-->
                         </tbody>

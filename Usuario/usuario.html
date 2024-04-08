@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Junior Oliveira">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script defer src="/scripts/spript.js"></script>
+    <script src="/scripts/delete.js"></script>
+    <script src="/scripts/update.js"></script>
+
+    <title>Series Project with Json-Server</title>
+</head>
+
+<body>
+    <header class="nav-flex">
+        <nav class="container-grid nav-flex__elements">
+
+            <div class="nav-flex__log-senai">
+                <img src="./assets/images/logo-senai.png" alt="logo do senai">
+            </div>
+
+            <div class="nav-flex__links">
+                <ul class="nav-flex__links-list">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#main">Cadastro</a></li>
+                    <li><a href="#footer">Biblioteca</a></li>
+                    <li><a href="#footer">Reservas</a></li>
+                </ul>
+            </div>
+
+            <div class="container-menu">
+                <button onclick="mostrarMenu()">
+                    <i class="bi bi-card-list" id="icone"></i>
+                </button>
+            </div>
+
+        </nav>
+
+        <!-- <div class="nav-flex__links-mobile" id="menuLinks">
+            <ul class="nav-flex__links-list-mobile" id="mostraIcons">
+                <li><a href="#">Home</a></li>
+                <li><a href="#main">Conteudo</a></li>
+                <li><a href="#footer">Contato</a></li>
+            </ul>
+        </div> -->
+
+
+    </header>
+
+    <main id="main">
+        <h2>Seja bem-vindo ao sistema de cadastro de livros</h2>
+
+        <section class="container-grid section-flex">
+            <article class="main-flex">
+                <div class="main-flex__form">
+                    <h2 id="title-form">Cadastro de Livros</h2>
+                </div>
+
+                <form action="" class="main-flex__form-element" id="formValidation">
+                    <div class="main-flex__inputs">
+                        <label for="">Informe o nome do livro</label>
+                        <input type="text" id="nomeSerie" placeholder="Ex: House os the dragon" id="nomeSerie" required>
+                    </div>
+
+                    <div class="main-flex__inputs">
+                        <label for="">Informe o nome do autor</label>
+                        <input type="text" id="numTemporada" placeholder="Ex: jorge" id="numTemporada"
+                            max="20">
+                    </div>
+
+                    <div class="main-flex__inputs">
+                        <label for="">Informe a edição</label>
+                        <input type="date"  id="dateNasc">
+                    </div>
+
+                    <div class="main-flex__inputs">
+                        <label for="">Biografia</label>
+                        <input type="text" id="numTemporada" placeholder=" é um livro para..." id="numTemporada" required min="1"
+                            max="20">
+                    </div>
+                    <div class="main-flex__inputs">
+                        <label for="">Informe a editora</label>
+                        <input type="text" id="anoLancamento" placeholder="Ex: brio" id="anoLancamento" required
+                            max="2024">
+                    </div>
+
+
+                    <div class="main-flex__button">
+                        <button type="submit" id="btncadastrar" onclick="adicionar(event)">
+                            Cadastrar livro
+                        </button>
+                        <button type="reset">
+                            Cancelar
+                        </button>
+                    </div>
+                </form>
+            </article>
+
+            <article class="main-flex">
+
+                <div class="main-flex__listagem-flex">
+
+                    <h2>Lista de livros cadastrados</h2>
+
+                    <table class="main-flex_listagem-flex_table" cellspacing="12">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>autor</th>
+                                <th>edição</th>
+                                <th>editora</th>
+                                
+                            </tr>
+                        </thead>
+
+                        <tbody id="listaSeries">
+                            <!--quem vai criar os dados vai ser o javaScript
+                                <td><i class="bi bi-pencil-square"></i></td>
+                                <td><i class="bi bi-trash3"></i></td>-->
+                        </tbody>
+
+                    </table>
+                </div>
+
+            </article>
+        </section>
+
+    </main>
+
+    <footer id="footer">
+        <section class="footer-flex">
+            <h3>Mais informações:</h3>
+
+            <div class="footer-flex__listas">
+                <p><strong>Escola:</strong> Senai Conde José Vicente de Azevedo</p>
+                <p><strong>Telefone:</strong> (11) 99999-7654</p>
+                <p><strong>Endereço:</strong> Rua Moreira de Godói, 226, ipiranga-SP</p>
+            </div>
+        </section>
+
+        <section class="footer-flex">
+            <h3>Contato:</h3>
+
+            <div class="footer-flex__listas">
+                <p><strong>Nome:</strong> Junior Oliveira</p>
+                <p><strong>Telefone:</strong> (11) 98561-7654</p>
+                <p><strong>Email:</strong> Junior.oliveira123@teste.com</p>
+            </div>
+        </section>
+    </footer>
+
+    <script src="/scripts/post.js"></script>
+
+</body>
+
+</html>
