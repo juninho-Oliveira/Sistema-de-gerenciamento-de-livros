@@ -1,7 +1,7 @@
-/*async function deleteSeries(id) {
+async function deleteSeries(id) {
   try {
     if (true) {
-      await fetch(`https://jsonserve-p8wz.onrender.com/series/${id}`, {
+      await fetch(`https://jsonserve-sistema-de-livros.onrender.com/Usuario/${id}`, {
         method: "DELETE",
       });
       window.location.reload();
@@ -14,4 +14,4 @@
   } catch (error) {
     console.error("Erro ao deletar série: ", error);
   }
-}*/
+}
