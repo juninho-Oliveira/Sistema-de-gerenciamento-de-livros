@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Junior Oliveira">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script defer src="/scripts/spript.js"></script>
     <script src="/scripts/delete.js"></script>
     <script src="/scripts/update.js"></script>
 
-    <title>Series Project with Json-Server</title>
+    <title>Sistema de gerenciamento de livros</title>
 </head>
 
 <body>
@@ -19,15 +19,15 @@
         <nav class="container-grid nav-flex__elements">
 
             <div class="nav-flex__log-senai">
-                <img src="./assets/images/logo-senai.png" alt="logo do senai">
+                <img src="/assets/images/logo-senai.png" alt="logo do senai">
             </div>
 
             <div class="nav-flex__links">
                 <ul class="nav-flex__links-list">
                     <li><a href="#">Home</a></li>
                     <li><a href="#main">Cadastro</a></li>
-                    <li><a href="#footer">Biblioteca</a></li>
-                    <li><a href="#footer">Reservas</a></li>
+                    <li><a href="#">Biblioteca</a></li>
+                    <li><a href="#">Reservas</a></li>
                 </ul>
             </div>
 
@@ -39,57 +39,45 @@
 
         </nav>
 
-        <!-- <div class="nav-flex__links-mobile" id="menuLinks">
-            <ul class="nav-flex__links-list-mobile" id="mostraIcons">
-                <li><a href="#">Home</a></li>
-                <li><a href="#main">Conteudo</a></li>
-                <li><a href="#footer">Contato</a></li>
-            </ul>
-        </div> -->
-
-
     </header>
 
     <main id="main">
-        <h2>Seja bem-vindo ao sistema de cadastro de livros</h2>
 
         <section class="container-grid section-flex">
             <article class="main-flex">
                 <div class="main-flex__form">
-                    <h2 id="title-form">Cadastro de Livros</h2>
+                    <h2 id="title-form">Cadastro de Livros do: <span>User</span></h2>
                 </div>
 
                 <form action="" class="main-flex__form-element" id="formValidation">
                     <div class="main-flex__inputs">
                         <label for="">Informe o nome do livro</label>
-                        <input type="text" id="nomeSerie" placeholder="Ex: House os the dragon" id="nomeSerie" required>
+                        <input type="text" id="nomeLivro" placeholder="Ex: Código limpo"  required>
                     </div>
 
                     <div class="main-flex__inputs">
                         <label for="">Informe o nome do autor</label>
-                        <input type="text" id="numTemporada" placeholder="Ex: jorge" id="numTemporada"
-                            max="20">
+                        <input type="text" id="nomeAutor" placeholder="Ex: Robert Cecil Martin" required>
                     </div>
 
                     <div class="main-flex__inputs">
                         <label for="">Informe a edição</label>
-                        <input type="date"  id="dateNasc">
+                        <input type="number"  id="edicaoLivro" placeholder="Ex: 1">
                     </div>
 
                     <div class="main-flex__inputs">
                         <label for="">Biografia</label>
-                        <input type="text" id="numTemporada" placeholder=" é um livro para..." id="numTemporada" required min="1"
-                            max="20">
+                        <input type="text" id="biografiaLivro" placeholder="Ex: Código Limpo: Habilidades Práticas do Agile Software" id="numTemporada" required>
                     </div>
+
                     <div class="main-flex__inputs">
                         <label for="">Informe a editora</label>
-                        <input type="text" id="anoLancamento" placeholder="Ex: brio" id="anoLancamento" required
-                            max="2024">
+                        <input type="text" id="anoLancamento" placeholder="Ex: Alta Books; 1ª edição (8 setembro 2009)" id="anoLancamento" required>
                     </div>
 
 
                     <div class="main-flex__button">
-                        <button type="submit" id="btncadastrar" onclick="adicionar(event)">
+                        <button type="submit" id="btncadastrar" onclick="adicionarLivro(event)">
                             Cadastrar livro
                         </button>
                         <button type="reset">
@@ -109,14 +97,14 @@
                         <thead>
                             <tr>
                                 <th>Nome</th>
-                                <th>autor</th>
-                                <th>edição</th>
-                                <th>editora</th>
-                                
+                                <th>Autor</th>
+                                <th>Biografia</th>
+                                <th>Edição</th>
+                                <th>Editora</th>
                             </tr>
                         </thead>
 
-                        <tbody id="listaSeries">
+                        <tbody id="listaLivros">
                             <!--quem vai criar os dados vai ser o javaScript
                                 <td><i class="bi bi-pencil-square"></i></td>
                                 <td><i class="bi bi-trash3"></i></td>-->
@@ -152,7 +140,7 @@
         </section>
     </footer>
 
-    <script src="/scripts/post.js"></script>
+    <script src="./usuario.js"></script>
 
 </body>
 

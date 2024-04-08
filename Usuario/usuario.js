@@ -5,7 +5,7 @@ span.innerText = `${nome} !`;
 
 //alert(nome);
 
-async function editar(nome, temporada, estudio, ano) {
+/*async function editar(nome, temporada, estudio, ano) {
   try {
     const id = localStorage.getItem("meu id");
     //const nome = localStorage.getItem('meu nome');
@@ -45,4 +45,10 @@ function voltar(event) {
 
   //alert(`nome: ${nomeSeries}, temporada: ${numTemporada}, estudio: ${nomeEstudio}, ano: ${anoLancamento} `)
   editar(nomeSeries, numTemporada, nomeEstudio, anoLancamento);
+}*/
+
+
+function adicionarLivro(event) {
+  event.preventDefault();
+  alert('ola')
 }

@@ -280,7 +280,6 @@ footer {
     }
 
     .main-flex {
-        border: 1px solid rgb(63, 52, 52);
         width: 100%;
         display: flex;
         align-items: center;
