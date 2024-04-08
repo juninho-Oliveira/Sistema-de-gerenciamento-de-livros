@@ -5,7 +5,7 @@
 document.addEventListener("DOMContentLoaded", (e) => {
   e.preventDefault();
 
-  const url = "https://jsonserve-p8wz.onrender.com/series";
+  const url = "https://jsonserve-sistema-de-livros.onrender.com/Usuario";
 
   async function getSeries() {
     try {
