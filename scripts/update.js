@@ -1,11 +1,10 @@
-/*function EditarSeries(id, series) {
+function EditarSeries(id, livros) {
 
   //alert(`ola estou aqui ${}` );
   const ids = id;
-  const nomeSerie = series;
+  const nomeUser = livros;
   localStorage.setItem('meu id', ids)
-  localStorage.setItem('meu nome', nomeSerie.nomeSeries)
+  localStorage.setItem('meu nome', nomeUser.NomeUsuario)
 
-  window.location.href = "../Editar/editar.html"
+  window.location.href = "../usuario/usuario.html"
 }
-*/
