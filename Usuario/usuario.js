@@ -2,12 +2,17 @@ const nome = localStorage.getItem("meu nome");
 let span = document.getElementById("nomeId");
 let lista = document.getElementById("nomeListaLivros");
 
+const idUser = localStorage.getItem("meu id");
+//alert(`ID: ${idUser}`)
+
 span.innerText = `${nome} !`;
 lista.innerText = `${nome} !`;
 
 
-async function potsLivros(nome, autor, edicao, biografia, editora) {
+async function potsLivros(nome, autor, edicao, biografia, editora, idUser) {
   
+
+
   const nomeLivro = nome;
   const autorLivro = autor;
   const edicaoLivro = edicao;
@@ -15,7 +20,8 @@ async function potsLivros(nome, autor, edicao, biografia, editora) {
   const editoraLivro = editora;
 
   try {
-    const dadosEnviados = {
+
+    const Livros = {
       NomeLivro: nome,
       AutorLivro: autor,
       BiografiaLivro: edicao,
@@ -36,12 +42,12 @@ async function potsLivros(nome, autor, edicao, biografia, editora) {
     } else {
 
       if (true) {
-        await fetch(`https://jsonserve-sistema-de-livros.onrender.com/Livros`, {
+        await fetch(`https://jsonserve-sistema-de-livros.onrender.com/Usuarios/${idUser}/Livros`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(dadosEnviados),
+          body: JSON.stringify(Livros),
         });
       }
 
@@ -68,3 +74,5 @@ function adicionar(event) {
 function atualizar() {
   window.location.reload();
 }
+
+

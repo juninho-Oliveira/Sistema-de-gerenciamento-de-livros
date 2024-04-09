@@ -1,11 +1,9 @@
-//realizar o consumo da api
 
-//get
 
 document.addEventListener("DOMContentLoaded", (e) => {
   e.preventDefault();
 
-  const url = "https://jsonserve-sistema-de-livros.onrender.com/Usuario";
+  const url = "https://jsonserve-sistema-de-livros.onrender.com/Usuarios";
 
   async function getSeries() {
     try {
@@ -76,4 +74,25 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
   getSeries();
 });
+
+
+function mostrarMenu() {
+  let menu = document.getElementById('icone');
+  let mostraMenu = document.getElementById('mostraIcons')
+
+  mostraMenu.style.display = (mostraMenu.style.display === "none" || mostraMenu.style.display === "") ? "flex" : "none";
+
+  
+
+  if (mostraMenu.style.display === "flex") {
+    //alert('flex')
+    menu.classList.add('bi', 'bi-x-circle')
+    menu.classList.remove('bi', 'bi-card-list');
+  } else if (mostraMenu.style.display === "none") {
+    //alert('none')
+    menu.classList.add('bi', 'bi-card-list')
+    menu.classList.remove('bi', 'bi-x-circle');
+  }
+
+}
 
