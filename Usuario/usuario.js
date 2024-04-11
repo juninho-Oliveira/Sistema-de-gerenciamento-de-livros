@@ -5,29 +5,33 @@ let lista = document.getElementById("nomeListaLivros");
 const idUser = localStorage.getItem("meu id");
 //alert(`ID: ${idUser}`)
 
-span.innerText = `${nome} !`;
-lista.innerText = `${nome} !`;
+span.innerText = `${nome} `;
+lista.innerText = `${nome} `;
 
 
-async function potsLivros(nome, autor, edicao, biografia, editora, idUser) {
+async function potsLivros(nome, autor, edicao, biografia, editora, idLivro) {
   
-
 
   const nomeLivro = nome;
   const autorLivro = autor;
   const edicaoLivro = edicao;
   const biografiaLivro = biografia;
   const editoraLivro = editora;
+  const idUnico = idLivro;
+  
 
   try {
 
-    const Livros = {
-      NomeLivro: nome,
+    const dadosEnviados = {
+      NomeLivro: "junior",//nome,
       AutorLivro: autor,
-      BiografiaLivro: edicao,
-      EdicaoLivro: biografia,
+      BiografiaLivro: biografia,
+      EdicaoLivro: edicao,
       EditoraLivro: editora,
+      id: "610f",
     };
+
+    
 
     if (nomeLivro === "") {
       alert("Nome obrigatório!");
@@ -42,16 +46,18 @@ async function potsLivros(nome, autor, edicao, biografia, editora, idUser) {
     } else {
 
       if (true) {
-        await fetch(`https://jsonserve-sistema-de-livros.onrender.com/Usuarios/${idUser}/Livros`, {
+        await fetch(`https://jsonserve-sistema-de-livros.onrender.com/Livros`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(Livros),
+          body: JSON.stringify(dadosEnviados),
         });
       }
 
-      atualizar();
+      //alert(`ID: ${idUnico}`)
+
+      //atualizar();
     }
   } catch (error) {
     console.log(error);
@@ -66,9 +72,11 @@ function adicionar(event) {
   const edicaoLivros = document.getElementById("edicaoLivro").value;
   const biografiaLivros = document.getElementById("biografiaLivro").value;
   const editoraLivros = document.getElementById("editoraLivro").value;
-  
 
-  potsLivros(nomeLivros, autorLivros, edicaoLivros, biografiaLivros, editoraLivros);
+  const idLivro = idUser;
+  alert(`ID: ${idLivro}, 2: ${idUser}`)
+
+  potsLivros(nomeLivros, autorLivros, edicaoLivros, biografiaLivros, editoraLivros, idLivro);
 }
 
 function atualizar() {

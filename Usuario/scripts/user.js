@@ -2,11 +2,16 @@
 
 //get
 
+//let idUser = localStorage.getItem("meu id");
+
+
 
 document.addEventListener("DOMContentLoaded", (e) => {
   e.preventDefault();
 
-  const url = "https://jsonserve-sistema-de-livros.onrender.com/Usuarios";
+  const url = "https://jsonserve-sistema-de-livros.onrender.com/Livros";
+
+  const id = idUser
 
   async function getLivros() {
     try {
@@ -15,19 +20,17 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
       const dados = await response.json();
       //console.log(dados);
+      
+      //alert(`ID: ${idUser}`)
 
-      dados.forEach((ele) => {
+      dados.forEach((Livro) => {
 
-        let livros = ele.Livros;
+        console.log(`livros id: ${Livro.id}, IdUser: ${idUser}`)
+          
 
-        livros.forEach((Livro) => {
-          console.log(Livro.NomeLivro)
+        const listaLivros = document.getElementById("listaLivros");
 
-          const listaLivros = document.getElementById("listaLivros");
-
-          //console.log(series.id)
-
-          //console.log(ele.Livros.AutorLivro)
+        if (Livro.id === id) {
 
           const tr = document.createElement("tr");
           const div = document.createElement("div");
@@ -76,7 +79,19 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
           listaLivros.appendChild(tr);
 
-        })
+        } 
+
+        //let livros = ele.Livros;
+
+        /*livros.forEach((Livro) => {
+
+
+          //console.log(series.id)
+
+          //console.log(ele.Livros.AutorLivro)
+
+
+        })*/
 
       });
 
@@ -87,23 +102,3 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
   getLivros();
 });
-
-/*async function render() {
-  const response = await fetch(`https://jsonserve-sistema-de-livros.onrender.com/Usuarios`)
-  const date = await response.json();
-
-  date.forEach((ele) => {
-    let livros = ele.Livros;
-
-    livros.forEach((nome) => {
-      console.log(nome.NomeLivro)
-    })
-
-
-  });
-
-  //console.log(date);
-
-}
-
-render()*/
