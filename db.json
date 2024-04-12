@@ -2,7 +2,7 @@
   "Usuarios": [
     {
       "NomeUsuario": "Maria",
-      "IdadeUsuario": 25,
+      "IdadeUsuario": "25",
       "EnderecoUsuario": "Avenida das Estrelas, 456",
       "EmailUsuario": "maria@email.com",
       "TelefoneUsuario": "11985615860",
