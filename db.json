@@ -1,0 +1,46 @@
+{
+  "Usuarios": [
+    {
+      "NomeUsuario": "Maria",
+      "IdadeUsuario": 25,
+      "EnderecoUsuario": "Avenida das Estrelas, 456",
+      "EmailUsuario": "maria@email.com",
+      "TelefoneUsuario": "11985615860",
+      "id": "610f"
+    },
+    {
+      "id": "398f",
+      "NomeUsuario": "Ronaldo",
+      "IdadeUsuario": "20",
+      "EnderecoUsuario": "Rua Moreira de Godói, 226",
+      "EmailUsuario": "teste@gmail.com",
+      "TelefoneUsuario": "11985645855"
+    },
+    {
+      "id": "af29",
+      "NomeUsuario": "impressao impre",
+      "IdadeUsuario": "15",
+      "EnderecoUsuario": "dasdw",
+      "EmailUsuario": "teste@gmail.com",
+      "TelefoneUsuario": "11985645855"
+    }
+  ],
+  "Livros": [
+    {
+      "NomeLivro": "O Pequeno Príncipe",
+      "AutorLivro": "Antoine de Saint-Exupéry",
+      "BiografiaLivro": "Um piloto cai com seu avião..... ",
+      "EdicaoLivro": "2012",
+      "EditoraLivro": "Editora XYZ",
+      "id": "609f"
+    },
+    {
+      "id": "af29",
+      "NomeLivro": "Código Limpo",
+      "AutorLivro": "Robert",
+      "BiografiaLivro": "Habilidade e Praticas",
+      "EdicaoLivro": "3",
+      "EditoraLivro": "Alta books"
+    }
+  ]
+}

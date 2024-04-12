@@ -9,7 +9,7 @@
 document.addEventListener("DOMContentLoaded", (e) => {
   e.preventDefault();
 
-  const url = "https://jsonserve-sistema-de-livros.onrender.com/Livros";
+  const url = "http://localhost:3000/Livros";
 
   const id = idUser
 
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
       dados.forEach((Livro) => {
 
-        console.log(`livros id: ${Livro.id}, IdUser: ${idUser}`)
+        //console.log(`livros id: ${Livro.id}, IdUser: ${idUser}`)
           
 
         const listaLivros = document.getElementById("listaLivros");
@@ -43,11 +43,11 @@ document.addEventListener("DOMContentLoaded", (e) => {
           excluir.classList.add("bi", "bi-trash3");
 
           excluir.addEventListener('click', function () {
-            deleteSeries(ele.id, ele);
+            deleteLivros(Livro.id, Livro);
           })
 
           editar.addEventListener('click', function () {
-            EditarSeries(ele.id, ele);
+            editarLivros(Livro.id, Livro);
           })
 
           //realizar a criação das celulas de cada elemento
@@ -81,18 +81,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
         } 
 
-        //let livros = ele.Livros;
-
-        /*livros.forEach((Livro) => {
-
-
-          //console.log(series.id)
-
-          //console.log(ele.Livros.AutorLivro)
-
-
-        })*/
-
       });
 
     } catch (error) {
@@ -102,3 +90,24 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
   getLivros();
 });
+
+
+function mostrarMenu() {
+  let menu = document.getElementById('icone');
+  let mostraMenu = document.getElementById('mostraIcons')
+
+  mostraMenu.style.display = (mostraMenu.style.display === "none" || mostraMenu.style.display === "") ? "flex" : "none";
+
+  
+
+  if (mostraMenu.style.display === "flex") {
+    //alert('flex')
+    menu.classList.add('bi', 'bi-x-circle')
+    menu.classList.remove('bi', 'bi-card-list');
+  } else if (mostraMenu.style.display === "none") {
+    //alert('none')
+    menu.classList.add('bi', 'bi-card-list')
+    menu.classList.remove('bi', 'bi-x-circle');
+  }
+
+}

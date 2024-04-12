@@ -3,9 +3,9 @@
 document.addEventListener("DOMContentLoaded", (e) => {
   e.preventDefault();
 
-  const url = "https://jsonserve-sistema-de-livros.onrender.com/Usuarios";
+  const url = "http://localhost:3000/Usuarios";
 
-  async function getSeries() {
+  async function getUser() {
     try {
       const response = await fetch(url);
       //console.log(response);
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     }
   }
 
-  getSeries();
+  getUser();
 });
 
 

@@ -23,12 +23,12 @@ async function potsLivros(nome, autor, edicao, biografia, editora, idLivro) {
   try {
 
     const dadosEnviados = {
-      NomeLivro: "junior",//nome,
+      NomeLivro: nome,
       AutorLivro: autor,
       BiografiaLivro: biografia,
       EdicaoLivro: edicao,
       EditoraLivro: editora,
-      id: "610f",
+      id: idUnico,
     };
 
     
@@ -46,7 +46,7 @@ async function potsLivros(nome, autor, edicao, biografia, editora, idLivro) {
     } else {
 
       if (true) {
-        await fetch(`https://jsonserve-sistema-de-livros.onrender.com/Livros`, {
+        await fetch(`http://localhost:3000/Livros`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -74,7 +74,7 @@ function adicionar(event) {
   const editoraLivros = document.getElementById("editoraLivro").value;
 
   const idLivro = idUser;
-  alert(`ID: ${idLivro}, 2: ${idUser}`)
+  //alert(`ID: ${idLivro}, 2: ${idUser}`)
 
   potsLivros(nomeLivros, autorLivros, edicaoLivros, biografiaLivros, editoraLivros, idLivro);
 }

@@ -1,7 +1,7 @@
-async function deleteSeries(id) {
+async function deleteLivros(id) {
     try {
       if (true) {
-        await fetch(`https://jsonserve-sistema-de-livros.onrender.com/Livros/${id}`, {
+        await fetch(`http://localhost:3000/Livros/${id}`, {
           method: "DELETE",
         });
         window.location.reload();

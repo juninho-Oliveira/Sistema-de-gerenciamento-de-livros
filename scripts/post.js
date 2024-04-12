@@ -33,7 +33,7 @@ async function potsSeries(nome, idade, endereco, email, telefone) {
     } else {
 
       if (true) {
-        await fetch(`https://jsonserve-sistema-de-livros.onrender.com/Usuarios`, {
+        await fetch(`http://localhost:3000/Usuarios`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
