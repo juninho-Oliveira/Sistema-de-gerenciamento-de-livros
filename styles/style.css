@@ -13,6 +13,10 @@
     --primary-font: "Montserrat", sans-serif;
 }
 
+span {
+    color: var(--primary-color);
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -22,9 +26,7 @@ body {
 }
 
 .container-grid {
-    max-width: 1000px;
-    margin: 0 auto;
-    /border: 1px solid red;/
+    width: 90%;
 }
 
 .nav-flex__log-senai>img {
@@ -40,6 +42,9 @@ body {
 }
 
 .nav-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 80px;
     box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.350);
 }
@@ -75,16 +80,24 @@ body {
     display: none;
 }
 
-/estilo do main/
+/*estilo do main*/
 
 #main>h2 {
     text-align: center;
     margin-top: 2%;
 }
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    /*border: 1px solid red;*/
+}
 
 .section-flex {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
     gap: 20px;
     margin-top: 40px;
 }
@@ -92,7 +105,7 @@ body {
 .main-flex {
     box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.350);
     border-radius: 8px;
-    padding: 20px;
+    padding: 10px;
     
 }
 
@@ -169,6 +182,7 @@ input[type="number"] {
     gap: 20px;
     height: 100%;
     overflow: hidden;
+    width: 100%;
 }
 
 
@@ -207,6 +221,7 @@ td {
 }
 
 th {
+    flex-wrap: wrap;
     font-size: 15px;
 }
 
@@ -241,7 +256,7 @@ footer {
 }
 
 
-/responsivo/
+/*responsivo*/
 
 @media (max-width:970px) {
 
@@ -253,7 +268,7 @@ footer {
     }
 
     main h2 {
-        font-size: 17px;
+        font-size: 14px;
     }
 
     #main>h2 {
@@ -269,16 +284,22 @@ footer {
     }
 
     .main-flex {
-        width: 80%;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        /border: 1px solid rgb(32, 30, 30);/
+        /*border: 1px solid rgb(32, 30, 30);*/
     }
 
+    /*.main-flex_listagem-flex_table {
+        border: 1px solid black;
+        max-width: 10px;
+        height: auto;
+    }*/
+
     .main-flex__form-element {
-        width: 90%;
+        width: 100%;
         
     }
 
@@ -300,6 +321,9 @@ footer {
 
     .main-flex_listagem-flex_table th {
         font-size: 12px;
+    }
+    td {
+        font-size: 10px;
     }
 
     .nav-flex__links-mobile {
@@ -326,8 +350,9 @@ footer {
         cursor: pointer;
 
     }
+    
 
-     /estilo do header/
+     /*estilo do header*/
      .nav-flex__links-list-mobile{
         position: fixed;
         width: 50%;

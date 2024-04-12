@@ -1,33 +1,39 @@
-async function potsSeries(nome, temporada, estudio, ano) {
+
+
+async function potsSeries(nome, idade, endereco, email, telefone) {
   
-  const nomeSeries = nome;
-  const numTemporada = temporada;
-  const nomeEstudio = estudio;
-  const anoLancamento = ano;
+  const nomeUsuario = nome;
+  const idadeUsuario = idade;
+  const enderecoUsuario = endereco;
+  const emailUsuario = email;
+  const telefoneUsuario = telefone;
 
   //alert(` nome: ${nomeSeries}, temporada: ${numTemporada}, estudio: ${nomeEstudio}, ano: ${anoLancamento} `);
     
 
   try {
     const dadosEnviados = {
-      nomeSeries: nome,
-      numTemporada: temporada,
-      nomeEstudio: estudio,
-      anoLancamento: ano,
+      NomeUsuario: nome,
+      IdadeUsuario: idade,
+      EnderecoUsuario: endereco,
+      EmailUsuario: email,
+      TelefoneUsuario: telefone,
     };
 
-    if (nomeSeries === "") {
-      alert("Nome da serie obrigatório!");
-    } else if (numTemporada === "") {
-      alert("Numero de temporadas obrigatório!");
-    } else if (nomeEstudio === "") {
-      alert("Nome do estudio obrigatório!");
-    } else if (anoLancamento === "") {
-      alert("ano de lançamento obrigatório!");
+    if (nomeUsuario === "") {
+      alert("Nome obrigatório!");
+    } else if (idadeUsuario === "") {
+      alert("Idade obrigatório!");
+    } else if (enderecoUsuario === "") {
+      alert("Endereço obrigatório!");
+    } else if (emailUsuario === "") {
+      alert("E-mail obrigatório!");
+    } else if (telefoneUsuario === "") {
+      alert("Telefone obrigatório!");
     } else {
 
       if (true) {
-        await fetch(`https://jsonserve-p8wz.onrender.com/series`, {
+        await fetch(`http://localhost:3000/Usuarios`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -46,12 +52,14 @@ async function potsSeries(nome, temporada, estudio, ano) {
 function adicionar(event) {
   event.preventDefault();
 
-  const nomeSeries = document.getElementById("nomeSerie").value;
-  const numTemporada = document.getElementById("numTemporada").value;
-  const nomeEstudio = document.getElementById("nomeEstudio").value;
-  const anoLancamento = document.getElementById("anoLancamento").value;
+  const nomeUsuario = document.getElementById("nomeUsuario").value;
+  const idadeUsuario = document.getElementById("idadeUsuario").value;
+  const enderecoUsuario = document.getElementById("enderecoUsuario").value;
+  const emialUsuario = document.getElementById("emialUsuario").value;
+  const telefoneUsuario = document.getElementById("telefoneUsuario").value;
+  
 
-  potsSeries(nomeSeries, numTemporada, nomeEstudio, anoLancamento);
+  potsSeries(nomeUsuario, idadeUsuario, enderecoUsuario, emialUsuario, telefoneUsuario);
 }
 
 function atualizar() {
