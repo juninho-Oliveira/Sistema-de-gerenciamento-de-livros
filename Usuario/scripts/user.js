@@ -5,7 +5,6 @@
 //let idUser = localStorage.getItem("meu id");
 
 
-
 document.addEventListener("DOMContentLoaded", (e) => {
   e.preventDefault();
 
@@ -90,6 +89,31 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
   getLivros();
 });
+
+
+
+function editarLivros(id, Livro) {
+
+  //alert('pegou!')
+
+//alert(`id: ${id}, ele: ${Livro}`)
+
+try {
+
+  document.getElementById("nomeLivro").value = Livro.NomeLivro;
+  document.getElementById("nomeAutor").value = Livro.AutorLivro;
+  document.getElementById("edicaoLivro").value = Livro.BiografiaLivro;
+  document.getElementById("biografiaLivro").value = Livro.EdicaoLivro;
+  document.getElementById("editoraLivro").value = Livro.EditoraLivro;
+
+
+} catch (error) {
+  alert('erro ', error)
+}
+
+}
+
+
 
 
 function mostrarMenu() {
