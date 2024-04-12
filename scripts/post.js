@@ -1,6 +1,6 @@
 
 
-async function potsSeries(nome, idade, endereco, email, telefone) {
+async function potsUser(nome, idade, endereco, email, telefone) {
   
   const nomeUsuario = nome;
   const idadeUsuario = idade;
@@ -8,7 +8,7 @@ async function potsSeries(nome, idade, endereco, email, telefone) {
   const emailUsuario = email;
   const telefoneUsuario = telefone;
 
-  //alert(` nome: ${nomeSeries}, temporada: ${numTemporada}, estudio: ${nomeEstudio}, ano: ${anoLancamento} `);
+  //alert(` nome: ${nomeUser}, temporada: ${numTemporada}, estudio: ${nomeEstudio}, ano: ${anoLancamento} `);
     
 
   try {
@@ -59,7 +59,7 @@ function adicionar(event) {
   const telefoneUsuario = document.getElementById("telefoneUsuario").value;
   
 
-  potsSeries(nomeUsuario, idadeUsuario, enderecoUsuario, emialUsuario, telefoneUsuario);
+  potsUser(nomeUsuario, idadeUsuario, enderecoUsuario, emialUsuario, telefoneUsuario);
 }
 
 function atualizar() {

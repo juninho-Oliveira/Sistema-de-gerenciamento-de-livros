@@ -23,17 +23,23 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
         const editar = document.createElement('button');
         const excluir = document.createElement('button');
+        const livros = document.createElement('button');
 
         div.classList.add("botoes");
         editar.classList.add("bi", "bi-pencil-square");
         excluir.classList.add("bi", "bi-trash3");
+        livros.classList.add("bi", "bi-book");
 
-        excluir.addEventListener('click', function() {
+        excluir.addEventListener('click', function () {
           deleteSeries(ele.id);
         })
 
-        editar.addEventListener('click', function() {
-         EditarSeries(ele.id, ele);
+        livros.addEventListener('click', function () {
+          EditarLivros(ele.id, ele);
+        })
+
+        editar.addEventListener('click', function () {
+          EditarUser(ele.id, ele);
         })
 
         //realizar a criação das celulas de cada elemento
@@ -62,11 +68,14 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
         div.appendChild(editar);
         div.appendChild(excluir);
+        div.appendChild(livros);
 
         listaUsuarios.appendChild(tr);
-        
+
       });
-  
+
+
+
     } catch (error) {
       console.log("deu erro " + error);
     }
@@ -76,13 +85,37 @@ document.addEventListener("DOMContentLoaded", (e) => {
 });
 
 
+function EditarUser(ele) {
+
+}
+
+async function EditarUser(id, ele) {
+  //alert('pegou!')
+
+  //alert(`id: ${id}, ele: ${ele}`)
+
+  try {
+
+    document.getElementById("nomeUsuario").value = ele.NomeUsuario;
+    document.getElementById("idadeUsuario").value = ele.IdadeUsuario;
+    document.getElementById("edicaoLivro").value = ele.EdicaoLivro;
+    document.getElementById("emialUsuario").value = ele.EmailUsuario;
+    document.getElementById("telefoneUsuario").value = ele.TelefoneUsuario;
+
+  } catch (error) {
+    alert('erro ', error)
+  }
+
+}
+
+
 function mostrarMenu() {
   let menu = document.getElementById('icone');
   let mostraMenu = document.getElementById('mostraIcons')
 
   mostraMenu.style.display = (mostraMenu.style.display === "none" || mostraMenu.style.display === "") ? "flex" : "none";
 
-  
+
 
   if (mostraMenu.style.display === "flex") {
     //alert('flex')

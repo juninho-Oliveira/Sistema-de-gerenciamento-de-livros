@@ -1,4 +1,4 @@
-function EditarSeries(id, elementos) {
+function EditarLivros(id, elementos) {
 
   //alert(`ola estou aqui ${}` );
   const ids = id;

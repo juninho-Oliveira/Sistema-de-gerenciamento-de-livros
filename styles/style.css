@@ -205,8 +205,8 @@ td {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin-top: 5px;
+    gap: 1px;
+    margin-top: 2px;
 }
 
 .botoes button {
@@ -323,7 +323,7 @@ footer {
         font-size: 12px;
     }
     td {
-        font-size: 10px;
+        font-size: 9px;
     }
 
     .nav-flex__links-mobile {
