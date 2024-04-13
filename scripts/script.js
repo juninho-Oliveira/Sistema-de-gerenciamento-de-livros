@@ -85,22 +85,62 @@ document.addEventListener("DOMContentLoaded", (e) => {
 });
 
 
-function EditarUser(ele) {
+function chama(ele) {
 
+  document.getElementById("nomeUsuario").value = ele.NomeUsuario;
+  document.getElementById("idadeUsuario").value = ele.IdadeUsuario;
+  document.getElementById("enderecoUsuario").value = ele.EnderecoUsuario;
+  document.getElementById("emialUsuario").value = ele.EmailUsuario;
+  document.getElementById("telefoneUsuario").value = ele.TelefoneUsuario;
 }
 
 async function EditarUser(id, ele) {
+
+  chama(ele)
+
   //alert('pegou!')
 
   //alert(`id: ${id}, ele: ${ele}`)
 
   try {
+    
+   /* document.getElementById("nomeUsuario").value = nome;
+    document.getElementById("idadeUsuario").value = idade;
+    document.getElementById("enderecoUsuario").value = endereco;
+    document.getElementById("emialUsuario").value = email;
+    document.getElementById("telefoneUsuario").value = telefone;
 
-    document.getElementById("nomeUsuario").value = ele.NomeUsuario;
-    document.getElementById("idadeUsuario").value = ele.IdadeUsuario;
-    document.getElementById("edicaoLivro").value = ele.EdicaoLivro;
-    document.getElementById("emialUsuario").value = ele.EmailUsuario;
-    document.getElementById("telefoneUsuario").value = ele.TelefoneUsuario;
+    const dadosEnviados = {
+      NomeUsuario: nome,
+      IdadeUsuario: idade,
+      EnderecoUsuario: endereco,
+      EmailUsuario: email,
+      TelefoneUsuario: telefone,
+    };
+
+    if (nomeUsuario === "") {
+      alert("Nome obrigatório!");
+    } else if (idadeUsuario === "") {
+      alert("Idade obrigatório!");
+    } else if (enderecoUsuario === "") {
+      alert("Endereço obrigatório!");
+    } else if (emailUsuario === "") {
+      alert("E-mail obrigatório!");
+    } else if (telefoneUsuario === "") {
+      alert("Telefone obrigatório!");
+    } else {
+
+      if (true) {
+        await fetch(`http://localhost:3000/Usuarios`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(dadosEnviados),
+        });
+      }
+    }*/
+
 
   } catch (error) {
     alert('erro ', error)

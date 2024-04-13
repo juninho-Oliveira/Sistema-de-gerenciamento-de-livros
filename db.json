@@ -2,7 +2,7 @@
   "Usuarios": [
     {
       "NomeUsuario": "Maria",
-      "IdadeUsuario": 25,
+      "IdadeUsuario": "25",
       "EnderecoUsuario": "Avenida das Estrelas, 456",
       "EmailUsuario": "maria@email.com",
       "TelefoneUsuario": "11985615860",
@@ -23,6 +23,14 @@
       "EnderecoUsuario": "dasdw",
       "EmailUsuario": "teste@gmail.com",
       "TelefoneUsuario": "11985645855"
+    },
+    {
+      "id": "b7dc",
+      "NomeUsuario": "junior",
+      "IdadeUsuario": "20",
+      "EnderecoUsuario": "rua tststs",
+      "EmailUsuario": "teste@gmail.com",
+      "TelefoneUsuario": "11985614544"
     }
   ],
   "Livros": [
@@ -49,6 +57,14 @@
       "BiografiaLivro": "3",
       "EdicaoLivro": "1",
       "EditoraLivro": "Alta books"
+    },
+    {
+      "id": "610f",
+      "NomeLivro": "codigo limpo",
+      "AutorLivro": "Robert",
+      "BiografiaLivro": "limpo",
+      "EdicaoLivro": "1",
+      "EditoraLivro": "alta books"
     }
   ]
 }
