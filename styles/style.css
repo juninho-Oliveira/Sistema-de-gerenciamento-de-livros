@@ -6,11 +6,13 @@
 
 
 /*import da font */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
+
+
 
 :root {
-    --primary-color: #B51D44;
-    --primary-font: "Montserrat", sans-serif;
+    --primary-color: #0906a5;
+    --primary-font: "Montserrat", Jersey;
 }
 
 span {
@@ -46,7 +48,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 80px;
-    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.350);
+    box-shadow: 2px 5px 10px rgba(15, 116, 167, 0.35);
 }
 
 .nav-flex__links-list {
@@ -57,9 +59,9 @@ body {
     gap: 40px;
 }
 
-.nav-flex__links {
+/* .nav-flex__links {
     width: 30%;
-}
+} */
 
 .nav-flex__links-list>li>a {
     text-decoration: none;
@@ -103,7 +105,7 @@ main {
 }
 
 .main-flex {
-    box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.350);
+    box-shadow: 5px 8px 15px rgba(12, 81, 116, 0.35);
     border-radius: 8px;
     padding: 10px;
     
@@ -133,7 +135,7 @@ main {
 
 input[type="text"] {
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid rgb(0, 0, 0);
     outline: none;
     height: 30px;
 }
@@ -235,7 +237,7 @@ footer {
     height: 250px;
     width: 100%;
     gap: 50px;
-    box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.350);
+    box-shadow: 5px 8px 20px rgba(15, 116, 167, 0.35);
     padding: 20px;
 }
 
