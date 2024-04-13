@@ -1,5 +1,39 @@
+document.getElementById('btnCadastrar').addEventListener('click', async (e) =>{
+  e.preventDefault();
 
+  // url do endpoint da aplicação web api
+  const url = "http://localhost:3000/Usuarios"
 
+  // valores que está vindo do front-end
+  const dadosEnviados ={
+    "NomeUsuario": document.getElementById("nomeUsuario").value,
+    "IdadeUsuario": document.getElementById("idadeUsuario").value,
+    "EnderecoUsuario": document.getElementById("enderecoUsuario").value,
+    "EmailUsuario": document.getElementById("emialUsuario").value,
+    "TelefoneUsuario":document.getElementById("telefoneUsuario").value,
+  }
+  try{
+      await fetch(url, {
+          method: 'POST' ,
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(dadosEnviados)
+          })
+          const response = await fetch(url)
+
+          if(response.ok) {
+              alert("A série foi cadastrada com sucesso!")
+          }
+
+          document.getElementById('btnCadastrar').removeEventListener('click', arguments.callee)
+  } catch (error) {
+      console.log(`o consumo do post deu ruim ${error}`);
+  }
+
+});
+
+/*
 async function potsUser(nome, idade, endereco, email, telefone) {
   
   const nomeUsuario = nome;
@@ -64,4 +98,4 @@ function adicionar(event) {
 
 function atualizar() {
   window.location.reload();
-}
+}*/
