@@ -45,9 +45,31 @@ document.addEventListener("DOMContentLoaded", (e) => {
             deleteLivros(Livro.id, Livro);
           })
 
-          editar.addEventListener('click', function () {
-            editarLivros(Livro.id, Livro);
-          })
+          editar.addEventListener("click", () => {
+            const id = Livro.id;
+          
+            if (window.confirm("Você deseja atualizar o usuario?")) {
+              document.getElementById("title-form").textContent = "Atualizar Livro";
+              document.getElementById("btnCadastrar").textContent = "Atualizar";
+            
+              document.getElementById("nomeLivro").value = Livro.NomeLivro;
+              document.getElementById("nomeAutor").value = Livro.AutorLivro;
+              document.getElementById("edicaoLivro").value = Livro.EdicaoLivro;
+              document.getElementById("biografiaLivro").value = Livro.BiografiaLivro;
+              document.getElementById("editoraLivro").value = Livro.EditoraLivro;
+              
+  
+              var botao = document.getElementById("btnCadastrar");
+              botao.onclick = null;
+  
+  
+              // Adiciona o novo evento de clique
+              document.getElementById("btnCadastrar").addEventListener("click", function(e) {
+                EditarLivro(e, Livro.id, url);
+                
+              });
+            }
+          });
 
           //realizar a criação das celulas de cada elemento
           const nomeLivro = document.createElement("td");
@@ -91,26 +113,39 @@ document.addEventListener("DOMContentLoaded", (e) => {
 });
 
 
+async function EditarLivro(e, id, url) {
+  alert(`ola: ${id}`)
+  e.preventDefault();
 
-function editarLivros(id, Livro) {
+  try {
+    const dadosEnviadosAtualizados = {
+      "NomeLivro": document.getElementById("nomeLivro").value,
+      "AutorLivro": document.getElementById("nomeAutor").value,
+      "BiografiaLivro": document.getElementById("biografiaLivro").value,
+      "EdicaoLivro": document.getElementById("edicaoLivro").value,
+      "EditoraLivro":document.getElementById("editoraLivro").value,
+    };
+alert(id);
+    const retorno = await fetch(`${url}/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dadosEnviadosAtualizados),
+      }
+    );
 
-  //alert('pegou!')
-
-//alert(`id: ${id}, ele: ${Livro}`)
-
-try {
-
-  document.getElementById("nomeLivro").value = Livro.NomeLivro;
-  document.getElementById("nomeAutor").value = Livro.AutorLivro;
-  document.getElementById("edicaoLivro").value = Livro.BiografiaLivro;
-  document.getElementById("biografiaLivro").value = Livro.EdicaoLivro;
-  document.getElementById("editoraLivro").value = Livro.EditoraLivro;
-
-
-} catch (error) {
-  alert('erro ', error)
-}
-
+    if (retorno.ok) {
+      alert("Usuario atualizada com sucesso!");
+    } else {
+      alert(`Usuario não pode ser atualizada ${retorno.status}`);
+    }
+    
+    //window.location.reload();
+  } catch (error) {
+    alert(error);
+  }
 }
 
 

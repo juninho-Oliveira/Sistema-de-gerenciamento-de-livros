@@ -28,9 +28,28 @@ document.addEventListener("DOMContentLoaded", (e) => {
         excluir.classList.add("bi", "bi-trash3");
         livros.classList.add("bi", "bi-book");
 
-        excluir.addEventListener("click", function () {
-          deleteSeries(ele.id);
-        });
+        excluir.addEventListener('click', async () => {
+          const id = ele.id
+  
+          if (window.confirm(`Você deseja realmente apagar esse Usuario: ${ele.NomeUsuario}`)) {
+  
+              try {
+                  const retorno = await fetch(`${url}/${id}`, {
+                      method: 'DELETE'
+                  })
+  
+                  if (retorno.ok) {
+                      alert('Usuario foi deletada com sucesso!')
+                  } else {
+                      alert(`Erro ao deletar série ${retorno.status}`)
+                  }
+                  
+              } catch (error) {
+                  console.log(error);
+              }
+  
+          }
+      })
 
         livros.addEventListener("click", function () {
           EditarLivros(ele.id, ele);
@@ -38,58 +57,28 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
         editar.addEventListener("click", () => {
           const id = ele.id;
-          //alert(id);
+        
+          if (window.confirm("Você deseja atualizar o usuario?")) {
+            document.getElementById("title-form").textContent = "Atualizar Usuario";
+            document.getElementById("btnCadastrar").textContent = "Atualizar";
+          
+            document.getElementById("nomeUsuario").value = ele.NomeUsuario;
+            document.getElementById("idadeUsuario").value = ele.IdadeUsuario;
+            document.getElementById("enderecoUsuario").value = ele.EnderecoUsuario;
+            document.getElementById("emialUsuario").value = ele.EmailUsuario;
+            document.getElementById("telefoneUsuario").value = ele.TelefoneUsuario;
+            
 
-          document.getElementById("title-form").textContent = "Atualizar Série";
-          document.getElementById("btnCadastrar").textContent = "Atualizar";
+            var botao = document.getElementById("btnCadastrar");
+            botao.onclick = null;
 
-          document.getElementById("nomeUsuario").value = ele.NomeUsuario;
-          document.getElementById("idadeUsuario").value = ele.IdadeUsuario;
-          document.getElementById("enderecoUsuario").value = ele.EnderecoUsuario;
-          document.getElementById("emialUsuario").value = ele.EmailUsuario;
-          document.getElementById("telefoneUsuario").value = ele.TelefoneUsuario;
 
-          if (window.confirm("Você deseja atualizar a série?")) {
-            document.getElementById("btnCadastrar").removeEventListener("click");
-
-            document.getElementById("btnCadastrar").addEventListener("click", EditarUser(e));
-
-            async function EditarUser(e) {
-              alert(id)
-              e.preventDefault()
-
-              alert(id);
-
-              try {
-                const dadosEnviadosAtualizados = {
-                  "NomeUsuario": document.getElementById("nomeUsuario").value,
-                  "IdadeUsuario": document.getElementById("idadeUsuario").value,
-                  "EnderecoUsuario": document.getElementById("enderecoUsuario").value,
-                  "EmailUsuario": document.getElementById("emialUsuario").value,
-                  "TelefoneUsuario":document.getElementById("telefoneUsuario").value,
-                };
-
-                const retorno = await fetch(`http://localhost:3000/Usuarios/${id}`,
-                  {
-                    method: "PUT",
-                    headers: {
-                      "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(dadosEnviadosAtualizados),
-                  }
-                );
-                if (retorno.ok) {
-                  alert("Série atualizada com sucesso!");
-                } else {
-                  alert(`A série não pode ser atualizada ${retorno.status}`);
-                }
-                //window.location.reload();
-              } catch (error) {
-                console.log(error);
-              }
-            }
+            // Adiciona o novo evento de clique
+            document.getElementById("btnCadastrar").addEventListener("click", function(e) {
+              EditarUser(e, ele.id, url);
+              
+            });
           }
-
         });
 
         //realizar a criação das celulas de cada elemento
@@ -127,7 +116,43 @@ document.addEventListener("DOMContentLoaded", (e) => {
   }
 
   getUser();
+
 });
+
+async function EditarUser(e, id, url) {
+  alert(`ola: ${id}`)
+  e.preventDefault();
+
+  try {
+    const dadosEnviadosAtualizados = {
+      "NomeUsuario": document.getElementById("nomeUsuario").value,
+      "IdadeUsuario": document.getElementById("idadeUsuario").value,
+      "EnderecoUsuario": document.getElementById("enderecoUsuario").value,
+      "EmailUsuario": document.getElementById("emialUsuario").value,
+      "TelefoneUsuario":document.getElementById("telefoneUsuario").value,
+    };
+alert(id);
+    const retorno = await fetch(`${url}/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dadosEnviadosAtualizados),
+      }
+    );
+
+    if (retorno.ok) {
+      alert("Usuario atualizada com sucesso!");
+    } else {
+      alert(`Usuario não pode ser atualizada ${retorno.status}`);
+    }
+    
+    //window.location.reload();
+  } catch (error) {
+    alert(error);
+  }
+}
 
 function mostrarMenu() {
   let menu = document.getElementById("icone");
