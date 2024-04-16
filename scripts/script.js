@@ -110,6 +110,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
         listaUsuarios.appendChild(tr);
       });
+      document.getElementById("campoBusca").addEventListener("input", buscarUsuarios);
     } catch (error) {
       console.log("deu erro " + error);
     }
@@ -120,7 +121,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 });
 
 async function EditarUser(e, id, url) {
-  alert(`ola: ${id}`)
+  //alert(`ola: ${id}`)
   e.preventDefault();
 
   try {
@@ -131,7 +132,7 @@ async function EditarUser(e, id, url) {
       "EmailUsuario": document.getElementById("emialUsuario").value,
       "TelefoneUsuario":document.getElementById("telefoneUsuario").value,
     };
-alert(id);
+//alert(id);
     const retorno = await fetch(`${url}/${id}`,
       {
         method: "PUT",
@@ -150,9 +151,26 @@ alert(id);
     
     //window.location.reload();
   } catch (error) {
-    alert(error);
+    console.log(error);
   }
 }
+
+async function buscarUsuarios() {
+  const textoBusca = document.getElementById("campoBusca").value.toLowerCase();
+
+  const usuarios = document.querySelectorAll("#listaUsuarios tr");
+  
+  usuarios.forEach(usuario => {
+    const nomeUsuario = usuario.querySelector("td:first-child").textContent.toLowerCase();
+    
+    if (nomeUsuario.includes(textoBusca)) {
+      usuario.style.display = "table-row";
+    } else {
+      usuario.style.display = "none";
+    }
+  });
+}
+
 
 function mostrarMenu() {
   let menu = document.getElementById("icone");

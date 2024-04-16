@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         } 
 
       });
-
+      document.getElementById("campoBusca").addEventListener("input", buscarUsuarios);
     } catch (error) {
       console.log("deu erro " + error);
     }
@@ -112,6 +112,22 @@ document.addEventListener("DOMContentLoaded", (e) => {
   getLivros();
 });
 
+
+async function buscarUsuarios() {
+  const textoBusca = document.getElementById("campoBusca").value.toLowerCase();
+
+  const usuarios = document.querySelectorAll("#listaLivros tr");
+  
+  usuarios.forEach(usuario => {
+    const nomeUsuario = usuario.querySelector("td:first-child").textContent.toLowerCase();
+    
+    if (nomeUsuario.includes(textoBusca)) {
+      usuario.style.display = "table-row";
+    } else {
+      usuario.style.display = "none";
+    }
+  });
+}
 
 async function EditarLivro(e, id, url) {
   alert(`ola: ${id}`)
@@ -147,6 +163,8 @@ alert(id);
     alert(error);
   }
 }
+
+
 
 
 
