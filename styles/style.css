@@ -6,15 +6,17 @@
 
 
 /*import da font */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
 
 :root {
-    --primary-color: #B51D44;
-    --primary-font: "Montserrat", sans-serif;
+    --primary-color: #36477A;
+    --second-color: #F37339;
+    --third--color: #33B992;
+    --primary-font: "Kalam", cursive;;
 }
 
 span {
-    color: var(--primary-color);
+    color: var(--second-color);
 }
 
 html {
@@ -64,11 +66,12 @@ body {
 .nav-flex__links-list>li>a {
     text-decoration: none;
     font-size: 1.2rem;
+    font-weight: bold;
     color: black;
 }
 
 .nav-flex__links-list>li>a:hover {
-    color: var(--primary-color);
+    color: var(--second-color);
 }
 
 
@@ -100,13 +103,13 @@ main {
     grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
     gap: 20px;
     margin-top: 40px;
+    
 }
 
 .main-flex {
     box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.350);
     border-radius: 8px;
     padding: 10px;
-    
 }
 
 
@@ -160,12 +163,22 @@ input[type="number"] {
     background-color: darkgray;
     width: 40%;
     cursor: pointer;
+    font-size: 20px;
 }
+
+
 
 .main-flex__button>button:enabled,
 .main-flex__button>button:enabled:active {
     background-color: var(--primary-color);
     cursor: pointer;
+}
+
+.main-flex__button>button:hover {
+    border: 2px solid var(--third--color);
+    background-color: white;
+    color: var(--third--color);
+    font-weight: bold;
 }
 
 .main-flex_listagem-flex_table th,
@@ -183,6 +196,7 @@ input[type="number"] {
     height: 100%;
     overflow: hidden;
     width: 100%;
+    
 }
 
 
@@ -205,8 +219,7 @@ td {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1px;
-    margin-top: 2px;
+    height: 32px;
 }
 
 .botoes button {
@@ -217,7 +230,8 @@ td {
 }
 
 .botoes button:hover {
-    border: 1px solid black;
+    font-size: 20px;
+    color: var(--second-color);
 }
 
 th {
@@ -365,7 +379,7 @@ footer {
         flex-direction: column;
         justify-content: center;
         transition: 0.3s ease-in;
-        background-color: var(--primary-color);
+        background-color: var(--second-color);
     }
     .nav-flex__links-list-mobile {
         transform: translateX(0);
