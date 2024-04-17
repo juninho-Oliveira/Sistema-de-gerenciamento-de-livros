@@ -67,7 +67,7 @@ body {
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: bold;
-    color: black;
+    color: var(--third--color);
 }
 
 .nav-flex__links-list>li>a:hover {
@@ -88,6 +88,7 @@ body {
 #main>h2 {
     text-align: center;
     margin-top: 2%;
+    color: var(--third--color);
 }
 main {
     display: flex;
@@ -101,7 +102,7 @@ main {
 .section-flex {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
-    gap: 20px;
+    gap: 10px;
     margin-top: 40px;
     
 }
@@ -116,6 +117,7 @@ main {
 .main-flex__form>h2 {
     text-align: center;
     margin-bottom: 10px;
+    color: var(--third--color);
 }
 
 .main-flex__form-element {
@@ -136,16 +138,20 @@ main {
 
 input[type="text"] {
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--second-color);
     outline: none;
     height: 30px;
 }
 
 input[type="number"] {
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--second-color);
     outline: none;
     height: 30px;
+}
+
+label {
+    color: var(--third--color);
 }
 
 .main-flex__button {
@@ -199,10 +205,21 @@ input[type="number"] {
     
 }
 
+.main-flex__listagem-flex>h2 {
+    color: var(--third--color);
+}
+
 
 tbody>tr:nth-child(even) {
     background-color: var(--primary-color);
     color: white;
+}
+
+tbody>tr {
+    color: var(--third--color);
+}
+thead>tr {
+    color: var(--second-color);
 }
 
 table,
@@ -220,6 +237,7 @@ td {
     align-items: center;
     justify-content: center;
     height: 32px;
+    
 }
 
 .botoes button {
@@ -265,8 +283,24 @@ footer {
     display: flex;
     flex-direction: column;
     font-size: 16px;
-    gap: 30px;
+    gap: 10px;
     font-family: var(--primary-font);
+}
+.footer-flex__listas strong {
+    color: var(--primary-color);
+}
+
+.footer-flex__listas>p a {
+    color: var(--second-color);
+    text-decoration: none;
+}
+
+.footer-flex__listas>p a:hover {
+    color: var(--third--color);
+}
+
+footer h3 {
+    color: var(--primary-color);
 }
 
 
