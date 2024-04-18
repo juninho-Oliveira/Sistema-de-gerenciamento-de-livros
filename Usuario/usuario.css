@@ -22,6 +22,29 @@ main section {
     font-size: 20px;
 }
 
+.botoesLivros {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 53px;
+}
+
+.botoesLivros button {
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.botoesLivros button:hover {
+    font-size: 20px;
+    color: var(--second-color);
+}
+
+
 
 @media (max-width:970px) {
 

@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
           const editar = document.createElement('button');
           const excluir = document.createElement('button');
 
-          div.classList.add("botoes");
+          div.classList.add("botoesLivros");
           editar.classList.add("bi", "bi-pencil-square");
           excluir.classList.add("bi", "bi-trash3");
 

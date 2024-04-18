@@ -6,15 +6,17 @@
 
 
 /*import da font */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
 
 :root {
-    --primary-color: #B51D44;
-    --primary-font: "Montserrat", sans-serif;
+    --primary-color: #36477A;
+    --second-color: #F37339;
+    --third--color: #33B992;
+    --primary-font: "Kalam", cursive;;
 }
 
 span {
-    color: var(--primary-color);
+    color: var(--second-color);
 }
 
 html {
@@ -64,11 +66,12 @@ body {
 .nav-flex__links-list>li>a {
     text-decoration: none;
     font-size: 1.2rem;
-    color: black;
+    font-weight: bold;
+    color: var(--third--color);
 }
 
 .nav-flex__links-list>li>a:hover {
-    color: var(--primary-color);
+    color: var(--second-color);
 }
 
 
@@ -85,6 +88,7 @@ body {
 #main>h2 {
     text-align: center;
     margin-top: 2%;
+    color: var(--third--color);
 }
 main {
     display: flex;
@@ -98,21 +102,22 @@ main {
 .section-flex {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
-    gap: 20px;
+    gap: 10px;
     margin-top: 40px;
+    
 }
 
 .main-flex {
     box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.350);
     border-radius: 8px;
     padding: 10px;
-    
 }
 
 
 .main-flex__form>h2 {
     text-align: center;
     margin-bottom: 10px;
+    color: var(--third--color);
 }
 
 .main-flex__form-element {
@@ -133,16 +138,20 @@ main {
 
 input[type="text"] {
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--second-color);
     outline: none;
     height: 30px;
 }
 
 input[type="number"] {
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--second-color);
     outline: none;
     height: 30px;
+}
+
+label {
+    color: var(--third--color);
 }
 
 .main-flex__button {
@@ -160,12 +169,22 @@ input[type="number"] {
     background-color: darkgray;
     width: 40%;
     cursor: pointer;
+    font-size: 20px;
 }
+
+
 
 .main-flex__button>button:enabled,
 .main-flex__button>button:enabled:active {
     background-color: var(--primary-color);
     cursor: pointer;
+}
+
+.main-flex__button>button:hover {
+    border: 2px solid var(--third--color);
+    background-color: white;
+    color: var(--third--color);
+    font-weight: bold;
 }
 
 .main-flex_listagem-flex_table th,
@@ -183,12 +202,24 @@ input[type="number"] {
     height: 100%;
     overflow: hidden;
     width: 100%;
+    
+}
+
+.main-flex__listagem-flex>h2 {
+    color: var(--third--color);
 }
 
 
 tbody>tr:nth-child(even) {
     background-color: var(--primary-color);
     color: white;
+}
+
+tbody>tr {
+    color: var(--third--color);
+}
+thead>tr {
+    color: var(--second-color);
 }
 
 table,
@@ -205,8 +236,8 @@ td {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1px;
-    margin-top: 2px;
+    height: 32px;
+    
 }
 
 .botoes button {
@@ -217,7 +248,8 @@ td {
 }
 
 .botoes button:hover {
-    border: 1px solid black;
+    font-size: 20px;
+    color: var(--second-color);
 }
 
 th {
@@ -251,8 +283,24 @@ footer {
     display: flex;
     flex-direction: column;
     font-size: 16px;
-    gap: 30px;
+    gap: 10px;
     font-family: var(--primary-font);
+}
+.footer-flex__listas strong {
+    color: var(--primary-color);
+}
+
+.footer-flex__listas>p a {
+    color: var(--second-color);
+    text-decoration: none;
+}
+
+.footer-flex__listas>p a:hover {
+    color: var(--third--color);
+}
+
+footer h3 {
+    color: var(--primary-color);
 }
 
 
@@ -365,7 +413,7 @@ footer {
         flex-direction: column;
         justify-content: center;
         transition: 0.3s ease-in;
-        background-color: var(--primary-color);
+        background-color: var(--second-color);
     }
     .nav-flex__links-list-mobile {
         transform: translateX(0);
