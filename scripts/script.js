@@ -37,6 +37,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
                   const retorno = await fetch(`${url}/${id}`, {
                       method: 'DELETE'
                   })
+
+                  const retornoLivros = await fetch(`http://localhost:3000/Livros/${id}`, {
+                    method: 'DELETE'
+                })
   
                   if (retorno.ok) {
                       alert('Usuario foi deletada com sucesso!')

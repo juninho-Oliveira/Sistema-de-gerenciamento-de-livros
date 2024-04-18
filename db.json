@@ -79,14 +79,6 @@
       "EnderecoUsuario": "Avenida dos Lírios, 890",
       "EmailUsuario": "isabela@example.com",
       "TelefoneUsuario": "11987654321"
-    },
-    {
-      "id": "6942",
-      "NomeUsuario": "impressao ",
-      "IdadeUsuario": "7",
-      "EnderecoUsuario": "dasdw",
-      "EmailUsuario": "teste@gmail.com",
-      "TelefoneUsuario": "11985645855"
     }
   ],
   "Livros": [
@@ -242,6 +234,5 @@
       "EdicaoLivro": "1",
       "EditoraLivro": "Alta books"
     }
-  ],
-  "cadastro": []
+  ]
 }
