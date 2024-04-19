@@ -1,31 +1,76 @@
-# SeriesProject-JsonServer
+# Projeto API de Cadastro de Usuários e Livros
 
-Neste projeto, os alunos terão que criar uma API através do servidor Json-Server que permite a criação de API's Fake. Para isso os alunos irão criar o json-server com dois endpoints, o primeiro para cadastro de usuários e o segundo para cadastro de livros
+Este projeto consiste na criação de uma API utilizando o Json-Server para cadastro de usuários e livros. Além disso, implementa diversas funcionalidades relacionadas à gestão do acervo de livros e usuários.
 
-### Primeiro Endpoint:
-- nome do usuário;
-- idade;
-- endereço;
-- email;
-- telefone;
+## 🎨 Layout
 
-### Segundo Endpoint:
-- nome do livro
-- autor
-- biografia
-- edição
-- editora
+O layout da aplicação está disponível no Figma:
 
-### Funcionalidades:
+[![Static Badge](https://img.shields.io/badge/Acessar_Layout-Figma-2304D361)](url)
 
-Adição, edição, exclusão e listagem de livros no acervo.
-Pesquisa de livros por título, autor, categoria, etc.
-Registro de empréstimos e devoluções de livros. (Desafio: Exibir os usuários que reservaram um determinado livro);
-Adição, edição, exclusão e listagem de usuários ( Desafio: Exibir os livros que um determinado usuário reservou) 
-Para o desafio os alunos irão precisar realizar a criação do json-server, realizar o consumo de api através do js. Utilização das linguagens (html, css e js). 
+![Tela inicial](./assets/images/pagina.png)
 
-Utilizem o trello para realizar a organização das tarefas e criem também um github próprio para esse projeto e coloquem o colega como colaborador desse repositório. Além dessas ferramentas, utilizem também ferramentas na internet para procurar referências de design, referências de icones, imagens, fotos, etc...
 
-"Sucesso é um esporte coletivo. Demonstre gratidão a todos os que colaboram com suas vitórias." 
 
--Carlos Hilsdorf
+
+## Funcionalidades Implementadas
+
+#### Usuários: 
+- Cadastro de usuários com os campos: nome, idade, endereço, e-mail e telefone.
+- Edição de usuários existentes.
+- Exclusão de usuários do sistema.
+- Listagem de todos os usuários cadastrados.
+- Busca de usuários por nome.
+
+#### Livros:
+
+- Cadastro de livros com os campos: nome, autor, biografia, edição e editora.
+- Edição de informações de livros existentes.
+- Exclusão de livros do acervo.
+- Listagem de todos os livros disponíveis.
+- Funcionalidades Adicionais
+- Busca de livros por título.
+
+### Desafios:
+
+- Exibição dos usuários que reservaram um determinado livro.
+- Exibição dos livros que um determinado usuário reservou.
+
+#### Ferramentas Utilizadas
+
+- Json-Server: Servidor para criar APIs Fake.
+- Git Project: Organização de tarefas.
+- GitHub: Controle de versão e colaboração no código.
+- HTML, BootStrap icons, CSS e JS: Linguagens utilizadas para o desenvolvimento da interface do usuário e consumo da API.
+
+### Como Executar
+
+- Clone o repositório: git clone https://github.com/juninho-Oliveira/Sistema-de-gerenciamento-de-livros.git
+
+- Instale as dependências: npm install
+- Inicie o servidor Json-Server: npm run server
+- Abra o arquivo index.html em seu navegador.
+
+#### Criadores 
+
+<table>
+  <tr>    
+  <td align="center">
+      <a href="https://github.com/juninho-Oliveira">
+        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/123269234?v=4" width="100px;" alt="Foto de perfil do Damião Júnior"/><br />
+        <sub>
+          <b>Damião Júnior</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/ananeres">
+        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/127620494?v=4" width="100px;" alt="Foto perfil do Alex Moreira
+"/><br />
+        <sub>
+          <b>Alex Moreira</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table> 
