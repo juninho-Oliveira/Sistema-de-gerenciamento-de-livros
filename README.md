@@ -64,7 +64,7 @@ O layout da aplicação está disponível no Figma:
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/ananeres">
+      <a href="https://github.com/alexesouza">
         <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/127620494?v=4" width="100px;" alt="Foto perfil do Alex Moreira
 "/><br />
         <sub>
