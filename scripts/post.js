@@ -7,7 +7,7 @@ async function potsUser(nome, idade, endereco, email, telefone) {
   const emailUsuario = email;
   const telefoneUsuario = telefone;
 
-  //alert(` nome: ${nomeUser}, temporada: ${numTemporada}, estudio: ${nomeEstudio}, ano: ${anoLancamento} `);
+  //alert(` ende: ${endereco} `);
     
 
   try {
@@ -24,7 +24,7 @@ async function potsUser(nome, idade, endereco, email, telefone) {
     } else if (idadeUsuario === "") {
       alert("Idade obrigatório!");
     } else if (enderecoUsuario === "") {
-      alert("Endereço obrigatório!");
+      alert("Cep obrigatório!");
     } else if (emailUsuario === "") {
       alert("E-mail obrigatório!");
     } else if (telefoneUsuario === "") {
@@ -51,15 +51,36 @@ async function potsUser(nome, idade, endereco, email, telefone) {
 function adicionar(event) {
   event.preventDefault();
 
+  buscarCep()
+
+}
+
+async function buscarCep () {
+  
   const nomeUsuario = document.getElementById("nomeUsuario").value;
   const idadeUsuario = document.getElementById("idadeUsuario").value;
   const enderecoUsuario = document.getElementById("enderecoUsuario").value;
   const emialUsuario = document.getElementById("emialUsuario").value;
   const telefoneUsuario = document.getElementById("telefoneUsuario").value;
   
+  try {
 
-  potsUser(nomeUsuario, idadeUsuario, enderecoUsuario, emialUsuario, telefoneUsuario);
+    const respose = await fetch(`https://viacep.com.br/ws/${enderecoUsuario}/json/`);
+    const date = await respose.json();
+
+    let endereco = date.logradouro
+
+    //alert(endereco)
+    potsUser(nomeUsuario, idadeUsuario, endereco ,emialUsuario, telefoneUsuario);
+
+  } catch (error) {
+    console.log("Deu erro!" + error)
+  }
 }
+
+
+
+
 
 function atualizar() {
   window.location.reload();

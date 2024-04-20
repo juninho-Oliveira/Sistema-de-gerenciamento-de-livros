@@ -56,7 +56,7 @@ body {
     list-style-type: none;
     justify-content: space-between;
     align-items: center;
-    gap: 40px;
+    gap: 10px;
 }
 
 .nav-flex__links {
@@ -229,6 +229,10 @@ td {
     margin-top: 2px;
     padding: 4px;
     border-collapse: collapse;
+}
+
+table {
+    font-size: 12px;
 }
 
 

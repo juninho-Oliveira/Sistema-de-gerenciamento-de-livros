@@ -176,6 +176,9 @@ async function buscarUsuarios() {
 }
 
 
+
+
+
 function mostrarMenu() {
   let menu = document.getElementById("icone");
   let mostraMenu = document.getElementById("mostraIcons");

@@ -130,7 +130,7 @@ async function buscarUsuarios() {
 }
 
 async function EditarLivro(e, id, url) {
-  alert(`ola: ${id}`)
+  //alert(`ola: ${id}`)
   e.preventDefault();
 
   try {
@@ -141,7 +141,7 @@ async function EditarLivro(e, id, url) {
       "EdicaoLivro": document.getElementById("edicaoLivro").value,
       "EditoraLivro":document.getElementById("editoraLivro").value,
     };
-alert(id);
+//alert(id);
     const retorno = await fetch(`${url}/${id}`,
       {
         method: "PUT",
