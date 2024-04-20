@@ -95,6 +95,14 @@
       "EnderecoUsuario": "Rua Moreira de Godói",
       "EmailUsuario": "leonardo@example.com",
       "TelefoneUsuario": "232323"
+    },
+    {
+      "id": "ca56",
+      "NomeUsuario": "alex",
+      "IdadeUsuario": "32",
+      "EnderecoUsuario": "Rua Cândido Portinari",
+      "EmailUsuario": "leonardo@example.com",
+      "TelefoneUsuario": "2323"
     }
   ],
   "Livros": [
